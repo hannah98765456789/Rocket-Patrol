@@ -98,6 +98,7 @@ class Play extends Phaser.Scene {
         this.p2.tilePositionX -= 4;
         if (!this.gameOver) {
             this.p1Rocket.update();         // update rocket sprite
+            if (multi)
             this.p2Rocket.update();         // update rocket sprite
             this.ship01.update();           // update spaceships (x3)
             this.ship02.update();

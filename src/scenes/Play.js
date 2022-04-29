@@ -77,11 +77,11 @@ class Play extends Phaser.Scene {
         // GAME OVER flag
         this.gameOver = false;
 
-       // 60-second play clock
-       this.timeRight = this.add.text(game.config.width - borderUISize * 2 - borderPadding * 2 - this.scoreConfig.fixedWidth, borderUISize + borderPadding * 2, this.p1Score, this.scoreConfig);
-       this.timeLeft = game.settings.gameTimer;
-       this.lastTime = (new Date()).getTime();
-       this.scoreConfig.fixedWidth = 0;
+        // 60-second play clock
+        this.timeRight = this.add.text(game.config.width - borderUISize * 2 - borderPadding * 2 - this.scoreConfig.fixedWidth, borderUISize + borderPadding * 2, this.p1Score, this.scoreConfig);
+        this.timeLeft = game.settings.gameTimer;
+        this.lastTime = (new Date()).getTime();
+        this.scoreConfig.fixedWidth = 0;
     }
 
     update() {
@@ -99,7 +99,7 @@ class Play extends Phaser.Scene {
         if (!this.gameOver) {
             this.p1Rocket.update();         // update rocket sprite
             if (multi)
-            this.p2Rocket.update();         // update rocket sprite
+                this.p2Rocket.update();         // update rocket sprite
             this.ship01.update();           // update spaceships (x3)
             this.ship02.update();
             this.ship03.update();
@@ -110,8 +110,7 @@ class Play extends Phaser.Scene {
 
             this.timeRight.text = Math.floor(this.timeLeft / 1000);
 
-            if (this.timeLeft < 0)
-            {
+            if (this.timeLeft < 0) {
                 this.add.text(game.config.width / 2, game.config.height / 2, 'GAME OVER', this.scoreConfig).setOrigin(0.5);
                 this.add.text(game.config.width / 2, game.config.height / 2 + 64, 'Press (R) to Restart or ← for Menu', this.scoreConfig).setOrigin(0.5);
                 this.gameOver = true;

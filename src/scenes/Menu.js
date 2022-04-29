@@ -30,9 +30,9 @@ class Menu extends Phaser.Scene {
         this.add.text(game.config.width / 2, game.config.height / 2, 'Use Arrows < > to move, Up to fire', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(game.config.width / 2, game.config.height / 2 + borderUISize + borderPadding, 'Press < for Novice or > for Expert.', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width / 2, game.config.height / 2 + borderUISize + borderPadding, 'Press ← for Novice or → for Expert.', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width / 2, game.config.height - borderUISize - borderPadding - borderUISize, 'Player 2: A & D to move, W to fire', menuConfig).setOrigin(0.5);
-        this.multiText =  this.add.text(game.config.width / 2, game.config.height - borderUISize - borderPadding, 'Press Down Toggle Multiplayer: OFF', menuConfig).setOrigin(0.5);
+        this.multiText =  this.add.text(game.config.width / 2, game.config.height - borderUISize - borderPadding, 'Press ↓ Toggle Multiplayer: OFF', menuConfig).setOrigin(0.5);
 
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -62,9 +62,9 @@ class Menu extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(keyDOWN)) {
             multi = !multi;
             if (multi)
-                this.multiText.text = "Press Down Toggle Multiplayer: ON"
+                this.multiText.text = "Press ↓ Toggle Multiplayer: ON"
             else
-                this.multiText.text = "Press Down Toggle Multiplayer: OFF"
+                this.multiText.text = "Press ↓ Toggle Multiplayer: OFF"
         }
     }
 }
